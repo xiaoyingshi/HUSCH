@@ -21,14 +21,23 @@
         <h1>Celltype</h1>
         <!-- <h3>Celltype-Dataset</h3>
         <img  width="95%" src="@/assets/sum_ct_eg.png" alt=""> -->
-         <h3>Celltype-UMAP</h3>
+         <h3>Tissue-level</h3>
         <!-- <img  width="95%" src="@/assets/skin_ct.png" alt=""> -->
         <div id='clu'>
-                    <div>
+                    <div style="width:48%">
                       <img
-                      width="48%"
+                      
                       class="image"
                       src="@/assets/skin_ct.png"
+                      style="max-width: 100%; max-height: 100%"
+                    />
+                    </div>
+                    <div style="width:48%">
+                      <img
+                      
+                      class="image"
+                      src="@/assets/skin_ct.png"
+                      style="max-width: 100%; max-height: 100%"
                     />
                     </div>
                     
@@ -244,6 +253,8 @@ export default {
       currentPage: 1,
       pageSize: 10,
       isRouterAlive: true,
+      level1:"",
+      level3:"",
       pic_type:[
         {value:'Immune',label:'Immune'},
         {value:'Stromal',label:'Stromal'},
@@ -293,6 +304,23 @@ export default {
   created() {
     // this.getData();
     // this.getDataList();
+    function isFileExisted(file) {
+    return new Promise((resolve, reject) => {
+      fs.access(file, (err) => {
+        if (err) {
+            this.level1='@/assets/integrate/Adipose_harmony_level1.png'
+            this.level3='@/assets/integrate/Adipose_harmony_level3.png'
+          resolve(false);//"不存在"
+        } else {
+            console.log('cunzai')
+          resolve(true);//"存在"
+        }
+      })
+    })
+};
+this.le
+
+
     
   },
   computed: {},

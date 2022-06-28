@@ -135,7 +135,8 @@ export default {
 
 .el-header > p {
   margin-left: 80px;
-}ß
+}
+
 .el-footer {
   background-color: #dce1de;
 }

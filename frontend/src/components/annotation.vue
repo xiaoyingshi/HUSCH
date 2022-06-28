@@ -30,6 +30,7 @@
       </el-col>
     </el-row>
     <el-card class="anno">
+
       <el-row>
         <el-divider content-position="center"
           ><span style="color: rgb(26, 96, 67); font-weight: bold">Input</span>
