@@ -1,0 +1,248 @@
+<template>
+  <div id="info">
+    <!-- <router-view v-if="isRouterAlive"></router-view> -->
+    <el-row>
+      <!-- <el-col :span="15"> -->
+      <el-col>
+        <div class="grid-content bg-purple-dark"></div>
+        <el-card class="box-card">
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <el-input v-model="input" placeholder="Input Tissue"></el-input>
+            </el-col>
+            <!-- <el-col :span="6">
+              <el-input v-model="input_tissue" placeholder="Input Tissue"></el-input>
+            </el-col> -->
+          </el-row>
+          <el-table
+            :data="
+              data_list
+                .filter(
+                  (data) =>
+                    !input ||
+                    data.Tissue.toLowerCase().includes(input.toLowerCase()) ||
+                    data.Dataset.toLowerCase().includes(input.toLowerCase())
+                )
+                .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+            "
+            border
+            :default-sort="{ prop: 'Tissue', order: 'ascending' }"
+            @sort-change
+            :row-class-name="tableRowClassName"
+            @row-click="onRowClick"
+          >
+            <template slot="empty">
+              <div class="noData">No Results :(</div>
+            </template>
+
+            <!-- <el-table-column type="index" label="#" :index = 'indexNum'></el-table-column> -->
+            <el-table-column
+              prop="Tissue"
+              label="Tissue"
+              align="center"
+              min-width="15%"
+              sortable
+            >
+            </el-table-column>
+            <el-table-column
+              prop="Dataset"
+              label="Dataset"
+              align="center"
+              min-width="30%"
+              @click=""
+              sortable
+            >
+              <template slot-scope="scope">
+                <el-popover placement="right" width="200" trigger="hover">
+                  <span>
+                    <img
+                      :src="
+                        require(`@/assets/pictures/${scope.row.Dataset}_cluster.png`)
+                      "
+                      style="max-height: 500px; max-width: 500px"
+                    />
+                    <img
+                      :src="
+                        require(`@/assets/pictures/${scope.row.Dataset}_assign.png`)
+                      "
+                      style="max-height: 500px; max-width: 500px"
+                    />
+                  </span>
+                  <div slot="reference">
+                    {{ scope.row.Dataset }}
+                  </div>
+                </el-popover>
+              </template>
+            </el-table-column>
+            <el-table-column
+              prop="Year"
+              label="Year"
+              align="center"
+              min-width="10%"
+              sortable
+            >
+            </el-table-column>
+            <el-table-column
+              prop="PMID"
+              label="PMID"
+              align="center"
+              min-width="10%"
+              sortable
+            >
+              <template slot-scope="scope">
+                <a
+                  :href="'https://pubmed.ncbi.nlm.nih.gov/' + scope.row.PMID"
+                  target="_blank"
+                  class="buttonText"
+                  >{{ scope.row.PMID }}</a
+                >
+              </template>
+            </el-table-column>
+            <el-table-column
+              prop="GSE"
+              label="GSE"
+              align="center"
+              min-width="15%"
+              sortable
+            >
+            </el-table-column>
+            <el-table-column
+              prop="Stage"
+              label="Stage"
+              align="center"
+              min-width="10%"
+              sortable
+            >
+            </el-table-column>
+            <el-table-column
+              prop="Platform"
+              label="Platform"
+              align="center"
+              min-width="15%"
+              sortable
+            >
+            </el-table-column>
+          </el-table>
+
+          <!-- <el-pagination
+            background
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage"
+                        :page-size="pageSize"
+
+             :page-sizes="[10, 20, 30, 40]"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="data_list.length"
+            align="center"
+          ></el-pagination> -->
+
+          <div class="block" style="text-align: center">
+            <!-- <span class="demonstration">Jump to</span> -->
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page.sync="currentPage"
+              :page-size="10"
+              layout="prev, pager, next, jumper"
+              :total="data_list.length"
+            >
+            </el-pagination>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+import data_json from "@/assets/data.json"; // 引用
+
+export default {
+  name: "info",
+  
+  
+  data() {
+    return {
+      itemList: [],
+      data_list: data_json,
+      res: "",
+      input: "",
+      input_tissue: "",
+      hover: false,
+      DatasetName: "",
+      currentPage: 1,
+      pageSize: 10,
+      isRouterAlive: true,
+    };
+  },
+  change(e) {
+    this.$forceUpdate();
+  },
+  created() {
+    // this.getData();
+    // this.getDataList();
+    
+  },
+  computed: {},
+  
+  methods: {
+    // async getDataList() {
+    //   const { data: res } = await this.axios.get("./data.json", {
+    //     params: this.queryInfo,
+    //   });
+    //   // console.log(res);
+    //   this.data_list = res;
+    //   // this.total = res.data.total;
+    //   // console.log(this.total);
+    // },
+    indexNum(index){
+      return index + (currentPage - 1)*10 + 1
+    },
+    tableRowClassName({ row, rowIndex }) {
+      //Put the index of each row into row
+      row.index = rowIndex;
+    },
+  
+    handleSizeChange(val) {
+      this.currentPage = 1;
+      this.currentPage = val;
+      this.pageSize = val;
+      // console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val;
+    },
+
+    onRowClick(row) {
+      //Click on the row to get the index
+      this.DatasetName = row.Dataset;
+      console.log(this.DatasetName);
+      // need return use push
+      // this.$router.push('/detail/');
+      this.$router.push(
+        "/detail/" + this.DatasetName
+        // {
+        // name: "detail",
+        // params: {
+        //   DatasetName: this.DatasetName,
+        // },
+
+        // }
+        
+      );
+      
+      
+      
+      console.log(this.$router);
+      // this.$router.go(0);
+    },
+  },
+};
+</script>
+
+
+<style lang="scss" >
+@import "@/styles/info.scss";
+</style>

@@ -1,0 +1,16 @@
+{
+  "id": "2973342",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-gene",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "26069186",
+      "name": "gene",
+      "font_class": "gene1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

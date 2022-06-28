@@ -1,0 +1,10 @@
+/* 引入图标 */
+[class^="icon-gene"],
+[class*=" icon-gene"]
+{
+  font-family: "iconfont" !important;
+  font-size: 18px !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

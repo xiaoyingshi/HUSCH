@@ -1,0 +1,66 @@
+
+.selinalogo {
+    height: 65px;
+    padding-left: 20px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 3px;
+  }
+.home-container {
+    height: 100vh;
+  }
+.el-header {
+    
+    /* background-image: linear-gradient(to right, black, #eaedf1); */
+    background-color: #01abaa !important;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    align-items: center;
+    color: #fedc3d;
+    font-weight: bold;
+    font-size: 100px;
+    font-family: Arial;
+    height: 120px;
+    
+  }
+  .el-footer {
+    background-color: black;
+  }
+  
+  .el-aside {
+    background-color: #01abaa;
+    
+  }
+    .el-aside.el-menu {
+      border: none;
+      font-weight: bold;
+      
+      height: 100%;
+    }
+
+  .el-main {
+    background-color: #eaedf1;
+  }
+  
+  .logo {
+    width: 70px;
+  }
+  
+  .toggle-button {
+    background-color: #979dac;
+    font-size: 10px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.2em;
+    
+    cursor: pointer;
+  }
+  
+  .el-icon-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+    padding-right: -2px;
+  }

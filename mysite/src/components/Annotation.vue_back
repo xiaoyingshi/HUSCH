@@ -1,0 +1,336 @@
+<template>
+<div style='color=rgb(33, 56, 50) !important'>
+    <div style="display: flex;
+    
+    justify-content: center;">
+        <p>
+            <strong>Annotation</strong>&nbsp;by SELINA
+        </p>
+    </div>
+     
+        
+        <!-- <p style="font-weight:bold;">SELINA is a deep learning-based framework for single cell assignment with multiple references.</p> -->
+    
+<el-row>
+    <el-col :span="24" style="padding=10px" > 
+        <!-- <h1>SELINA</h1> -->
+        <p style="font-weight:bold;"> <strong> <a href="https://selina.readthedocs.io/en/latest/index.html" >SELINA</a></strong> is a deep learning-based framework for single cell assignment with multiple references.</p>
+    </el-col>
+</el-row>
+<div class="anno">
+<el-row >
+    <el-divider content-position="center"><span style="color: rgb(26, 96, 67) ;">Input files</span></el-divider>
+    <el-col :span='4' style="color=rgb(33, 56, 50)">
+        <p>Format of count matrix file:</p>
+    </el-col>
+    <el-col :span="4" >
+         <el-select v-model="type_value" placeholder="请选择">
+            <el-option
+            v-for="item in file_type"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+            </el-option>
+         </el-select>
+    </el-col>
+    <el-col :span='4' style="color=rgb(33, 56, 50)">
+        <p>Select the count matrix file:</p>
+    </el-col>
+    <el-col :span="4" >
+        <form>
+            <input type="file" value="" id="file"  accept=".gz" @change="getFile_main($event)">
+            
+            
+        </form>
+    </el-col>
+    
+    </el-row> 
+    <el-row v-if="type_value=='mtx'">  
+    <el-col :span='4' style="color=rgb(33, 56, 50)" v-if="type_value=='mtx'">
+    <p>Select the barcode file:</p>
+    </el-col>
+    <el-col :span='4' v-if="type_value=='mtx'">
+        <form>
+        <input type="file" value="" id="file"  accept=".gz" @change="getFile_bar($event)" v-if="type_value=='mtx'">
+    </form>
+    </el-col>
+    <el-col :span='4' style="color=rgb(33, 56, 50)" v-if="type_value=='mtx'">
+    <p>Select the feature file:</p>
+    </el-col>
+    <el-col :span="4" v-if="type_value=='mtx'">
+        <form>
+            <input type="file" value="" id="file"  accept=".gz" @change="getFile_gen($event)" v-if="type_value=='mtx'">
+        </form>
+    </el-col>
+
+
+
+</el-row>
+
+<el-row :gutter="20">
+    <el-divider content-position="center"><span style="color: rgb(26, 96, 67) ;">Parameter</span></el-divider>
+    
+    <el-col :span='3' style="color=rgb(33, 56, 50)">
+    <p>Single-cell or Cluster level:</p>
+    </el-col>
+    <el-col :span="3" >
+         <el-select v-model="mode_value" placeholder="Please select mode.">
+            <el-option
+            v-for="item in mode"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+            </el-option>
+         </el-select>
+    </el-col>
+    <el-col :span='3' style="color=rgb(33, 56, 50)" >
+    <p>Selet the tissue model:</p>
+    </el-col>
+    <el-col :span="3">
+        <el-select v-model="model_value" placeholder="Please select model." @change="FileType()">
+            <el-option
+            v-for="item in model"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+            </el-option>
+        </el-select>   
+    </el-col>
+    <el-col :span='3' style="color=rgb(33, 56, 50)">
+    <p>Email to receive results:</p>
+    </el-col>
+    <el-col :span="3">
+        <el-input v-model="email" placeholder="Input your email"></el-input>  
+    </el-col>
+    <!-- <el-col :span="6">
+      
+         <el-button type="primary" round @click="submitForm($event)">Submmit</el-button>
+
+    </el-col> -->
+
+</el-row>
+<el-row>
+    <el-col :span="6" :offset="9">
+        
+    </el-col>
+
+</el-row>
+<div style="display: flex;
+    
+    justify-content: center;">
+<el-button type="primary" round @click="submitForm($event)">Submmit</el-button>
+</div>
+</div>
+
+    <h1>Input file format</h1>
+    <div id='Format'>
+    
+    <ul>
+        <li>If the format is 'h5' or 'plain', users need to specify the name of the count matrix file.If the format is 'mtx', the 'matrix' should be the name of .mtx formatted matrix file, such as 'matrix.mtx'.</li>
+        <li>The plain format is a gene by cell matrix.</li>
+        <li>In order to ensure your experience and the good operation of the server, we only allow uploading .tar.gz files for the time being, so you need to compress your original file. The name of the compressed file must be the original file name plus .tar.gz(eg :Lung.h5>>Lung.h5.tar.gz).</li>
+    </ul>
+</div>
+</div>
+
+    
+
+    
+
+
+
+
+            
+</template>
+
+<script>
+export default {
+    name:"upload",
+    data() {
+        return {
+            name: "UploadFile",
+            checkStatus: "",
+            mode_value:"",
+            model_value:"",
+            type_value:"",
+            email:"",
+            
+            file_type:[
+              {value:'h5',label:'h5'},
+              {value:'mtx',label:'mtx'},
+              {value:'plain',label:'plain'},
+            ],
+            mode:[
+              {value:'single',label:'Single'},
+              {value:'cluster',label:'Cluster'},
+            ],
+            model:[
+                {value:'ADrenal-Cland',label:'ADrenal-Cland'},
+                {value:'Airway-Epithelium',label:'Airway-Epithelium'},
+                {value:'Artery',label:'Artery'},
+                {value:'Bladder',label:'Bladder'},
+                {value:'Blood',label:'Blood'},
+                {value:'Bone-Marrow',label:'Bone-Marrow'},
+                {value:'Brain',label:'Brain'},
+                {value:'Breast',label:'Breast'},
+                {value:'Choroid',label:'Choroid'},
+                {value:'Decidua',label:'Decidua'},
+                {value:'Esophagus',label:'Esophagus'},
+                {value:'Eye',label:'Eye'},
+                {value:'Fallopian',label:'Fallopian'},
+                {value:'Gall-Bladder',label:'Gall-Bladder'},
+                {value:'Heart',label:'Heart'},
+                {value:'Intestine',label:'Intestine'},
+                {value:'Kidney',label:'Kidney'},
+                {value:'Liver',label:'Liver'},
+                {value:'Lung',label:'Lung'},
+                {value:'Muscle',label:'Muscle'},
+                {value:'Nose',label:'Nose'},
+                {value:'Ovary',label:'Ovary'},
+                {value:'Pancreas',label:'Pancreas'},
+                {value:'Peritoneum',label:'Peritoneum'},
+                {value:'Placenta',label:'Placenta'},
+                {value:'Pleura',label:'Pleura'},
+                {value:'Prostate',label:'Prostate'},
+                {value:'Skin',label:'Skin'},
+                {value:'Spleen',label:'Spleen'},
+                {value:'Stomach',label:'Stomach'},
+                {value:'Testis',label:'Testis'},
+                {value:'Thyroid',label:'Thyroid'},
+                {value:'Ureter',label:'Ureter'},
+                {value:'Uterus',label:'Uterus'},
+                {value:'Visceral-Adipose',label:'Visceral-Adipose'},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+                // {value:'',label:''},
+              
+              
+
+            ]
+        }
+    },
+
+    methods: {
+        
+        getFile_main(event) {
+            this.file_main = event.target.files[0],
+            console.log(this.file_main)
+        },
+        getFile_bar(event) {
+            this.file_bar = event.target.files[0],
+            console.log(this.file_bar)
+        },
+        getFile_gen(event) {
+            this.file_gen = event.target.files[0],
+            console.log(this.file_gen)
+        },
+        submitForm(event) {
+            // alert('hi')
+            // event.preventDefault();
+            let formData = new FormData();
+            formData.append('file_main', this.file_main);
+            formData.append('file_bar', this.file_bar);
+            formData.append('file_gen', this.file_gen);
+            formData.append('mode', this.mode_value);
+            formData.append('model', this.model_value);
+            formData.append('email',this.email)
+            formData.append('format',this.type_value)
+            
+            console.log(formData.get('mode'))
+            console.log(formData.get('model'))
+            let config = {
+                headers: {
+                    'Content-Type':'multipart/form-data'
+                }
+            };
+
+            // 创建一个空的axios 对象
+            // const instance=axios.create({
+            //     withCredentials: true,      // 如果发送请求的时候需要带上token 验证之类的也可以写在这个对象里
+            //     headers: {
+            //         'Content-Type':'multipart/form-data'
+            //     }
+            // }) 
+            console.log(formData)
+            // this.axios.post('http://127.0.0.1:8000/backend/upload/',formData).then(res=>{
+            //     if(res.data.code === 200) {
+            //         alert(res.data.msg);
+            //         this.checkStatus = res.data;
+            //     }else if(res.data.code === 2) {
+            //         alert(res.data.msg)
+            //     }else{
+            //         alert(res.data.msg);
+            //     }
+            // })
+            alert('The redult will send to your email.')
+            this.axios({
+                url:'selina/',
+                method:'post',
+                data:formData,
+                headers: {
+                  'Content-Type': 'multipart/form-data'
+                 }
+            }).then(res=>{
+                console.log(res)
+            })
+            
+
+        }
+    },
+}
+</script>
+
+<style scoped>
+
+.anno{
+    /* background-color: rgb(26, 96, 67); */
+    border-radius: 30px;
+    border: 3px solid rgb(26, 96, 67);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    font-weight:bold;
+}
+strong{
+    font-size: 30px;
+}
+.el-col{
+    margin: 20px;
+}
+#title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.el-button{
+background-color: rgb(26, 96, 67);
+}
+.el-divider{
+    color: rgb(26, 96, 67);
+    background-color: rgb(26, 96, 67);
+}
+#Format{
+    border-radius: 20px;
+    border: 3px solid rgb(26, 96, 67);
+    /* margin: 20px; */
+    padding: 10px;
+}
+ul{
+    margin: 20px;
+}
+
+
+</style>
+
