@@ -1,0 +1,44 @@
+manual	level1	level2
+AVRE	Stromal	Endothelial
+B	Immune	B
+CD4T	Immune	CD4T
+CD8T	Immune	CD8T
+CNT	Tissue-specific	Epithelial
+Collecting Duct	Tissue-specific	Epithelial
+DC	Immune	DC
+DVRE	Stromal	Endothelial
+Endothelial	Stromal	Endothelial
+Epithelial	Tissue-specific	Epithelial
+Epithelial||renal Pelvis_Unknown	Epithelial||renal Pelvis_Unknown	Epithelial||renal Pelvis_Unknown
+Fibroblast	Stromal	Fibroblast
+Fibroblast_Unknown	Fibroblast_Unknown	Fibroblast_Unknown
+GE	Stromal	Endothelial
+Glomerular Visceral Epithelial_Unknown	Glomerular Visceral Epithelial_Unknown	Glomerular Visceral Epithelial_Unknown
+GPE	Stromal	Epithelial
+Intercalated	Tissue-specific	Epithelial
+Loop Of Henle	Tissue-specific	Epithelial
+Lymphocyte	Immune	Lymphocyte
+Macrophage	Immune	Macrophage
+Mast	Immune	Mast
+Mast_Unknown	Mast_Unknown	Mast_Unknown
+MNP	Immune	MNP
+Monocyte	Immune	Monocyte
+Muscle	Muscle	Muscle
+Myofibroblast	Stromal	Myofibroblast
+Neutrophil	Immune	Neutrophil
+NK	Immune	NK
+NKT	Immune	NKT
+PCE	Stromal	Endothelial
+PCT	Tissue-specific	Epithelial
+Pericyte	Stromal	Pericyte
+Plasma	Immune	Plasma
+Podocyte	Tissue-specific	Epithelial
+Principal	Tissue-specific	Epithelial
+PST	Tissue-specific	Epithelial
+PT	Tissue-specific	Epithelial
+Renal Alpha-intercalated	Tissue-specific	Epithelial
+Renal Beta-intercalated	Tissue-specific	Epithelial
+Stem	Tissue-specific	Stem
+Stroma	Stromal	Stroma
+T	Immune	T
+DT	Tissue-specific	Epithelial

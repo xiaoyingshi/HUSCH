@@ -1,0 +1,12 @@
+manual	level1	level2
+Endometrial	Tissue-specific	Endometrial
+Endothelial	Stromal	Endothelial
+Epithelial	Tissue-specific	Epithelial
+Fibroblast	Stromal	Fibroblast
+Lymphocyte	Immune	Lymphocyte
+Macrophage	Immune	Macrophage
+Mast	Immune	Mast
+Muscle	Muscle	Muscle
+Smooth Muscle	Muscle	Smooth Muscle
+Stromal	Stromal	Stromal
+T	Immune	T

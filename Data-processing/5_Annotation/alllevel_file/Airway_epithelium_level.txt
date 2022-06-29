@@ -1,0 +1,14 @@
+manual	level1	level2
+B	Immune	B
+Basal	Tissue-specific	Epithelial
+Brush+PNEC	Tissue-specific	Epithelial
+Chondrocyte	Tissue-specific	Chondrocyte
+Ciliated	Tissue-specific	Epithelial
+DC	Immune	DC
+Endothelial	Stromal	Endothelial
+Epithelial	Tissue-specific	Epithelial
+Fibroblast	Stromal	Fibroblast
+Goblet	Tissue-specific	Goblet
+Macrophage	Immune	Macrophage
+Muscle	Muscle	Muscle
+Secretory	Tissue-specific	Epithelial

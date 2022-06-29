@@ -1,0 +1,7 @@
+1. If sone barcodes are quoted by double quotes, remember to remove them.
+2. For plain file, the column names should be barcodes while the row names are gene symbols. Sometimes you may need to transpose or remove numeric row names, etc.
+3. If it is a rdata or rds file, read the file in and take out the raw data slot before going to the subsequent processing.
+4. When the file is too large, it is faster to process it with the data.table package.
+6. If there are many files from same source, you need to merge them together. Remember to add the prefix when merging, which usually are the GSM number.
+7. When merging different count data, convert all of them to h5 files and then merge them to reduce errors.
+8. Sometimes you need to split the file, for example, a set of data has different organizational sources, it will be faster to use mtx file to split.

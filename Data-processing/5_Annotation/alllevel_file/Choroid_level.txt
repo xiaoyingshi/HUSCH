@@ -1,0 +1,17 @@
+x
+B
+CD4Tconv
+CD8T
+DC
+Endothelial
+Eosinophils
+Mast
+Mono/Macro
+Myofibroblasts
+Neutrophils
+NK
+pDC
+Plasma
+Plasma_Unknown_Unknown
+TMKI67
+Treg

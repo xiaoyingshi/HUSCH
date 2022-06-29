@@ -1,0 +1,9 @@
+manual	level1	level2
+B	Immune	B
+CD8T	Immune	CD8T
+Endothelial	Stromal	Endothelial
+Erythroid	Immune	Erythroid
+Lymphoid Progenitor	Immune	Lymphoid Progenitor
+Macrophage	Immune	Macrophage
+Neutrophil	Immune	Neutrophil
+T	Immune	T

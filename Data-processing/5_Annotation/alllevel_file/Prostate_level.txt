@@ -1,0 +1,16 @@
+manual	level1	level2
+Basal	Tissue-specific	Epithelial
+Club	Tissue-specific	Epithelial
+Endothelial	Stromal	Endothelial
+Epithelial	Tissue-specific	Epithelial
+Fibroblast	Stromal	Fibroblast
+Hillock	Tissue-specific	Epithelial
+Leukocyte	Stromal	Leukocyte
+Luminal	Tissue-specific	Epithelial
+Macrophage	Immune	Macrophage
+Muscle	Muscle	Muscle
+Neuroendocrine	Tissue-specific	Neuroendocrine
+Neutrophil	Immune	Neutrophil
+NK	Immune	NK
+Smooth Muscle	Muscle	Smooth Muscle
+T	Immune	T

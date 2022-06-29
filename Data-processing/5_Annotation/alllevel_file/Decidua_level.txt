@@ -1,0 +1,19 @@
+manual	level1	level2
+DC	Immune	DC
+Endothelial	Stromal	Endothelial
+Extravillous Trophoblast	Tissue-specific	Extravillous Trophoblast
+Fibroblast	Stromal	Fibroblast
+Glandular Epithelial	Tissue-specific	Epithelial
+Granulocyte	Immune	Granulocyte
+Hofbauer	Immune	Hofbauer
+ILC	Immune	ILC
+Macrophage	Immune	Macrophage
+Monocyte	Immune	Monocyte
+NK	Immune	NK
+Pericyte	Stromal	Pericyte
+Perivascular	Tissue-specific	Perivascular
+Plasma	Immune	Plasma
+Stromal	Stromal	Stromal
+Syncytiotrophoblast	Tissue-specific	Syncytiotrophoblast
+T	Immune	T
+Villous Cytotrophoblast	Tissue-specific	Villous Cytotrophoblast

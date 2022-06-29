@@ -1,0 +1,15 @@
+manual	level1	level2
+B	Immune	B
+CD8T	Immune	CD8T
+Chromoblast	Tissue-specific	Chromoblast
+Endothelial	Stromal	Endothelial
+Lymphocyte	Immune	Lymphocyte
+Macrophage	Immune	Macrophage
+Muscle	Muscle	Muscle
+Myeloid	Immune	Myeloid
+Neuron	Neuron	Neuron
+Neutrophil	Immune	Neutrophil
+NK	Immune	NK
+Stromal	Stromal	Stromal
+T	Immune	T
+Zona Fasciculata	Tissue-specific	Zona Fasciculata

@@ -1,0 +1,25 @@
+manual	level1	level2
+APC	Immune	Antigen-presenting
+Cytotrophoblast	Tissue-specific	Trophoblast
+DC	Immune	DC
+Decidual	Tissue-specific	Decidual
+Endothelial	Stromal	Endothelial
+Epithelial	Tissue-specific	Epithelial
+Epithelial Glandular	Tissue-specific	Epithelial
+Erythroid	Immune	Erythroid
+Fibroblast	Stromal	Fibroblast
+Granulocyte	Immune	Granulocyte
+Hofbauer	Immune	Hofbauer
+ILC	Immune	ILC
+Macrophage	Immune	Macrophage
+Monocyte	Immune	Monocyte
+Muscle	Muscle	Muscle
+Neutrophil	Immune	Neutrophil
+NK	Immune	NK
+Plasma	Immune	Plasma
+Proliferating	Tissue-specific	Proliferating
+Stromal	Stromal	Stromal
+Syncytiotrophoblast	Tissue-specific	Trophoblast
+T	Immune	T
+Trophoblast	Tissue-specific	Trophoblast
+Vascular Smooth Muscle	Muscle	Vascular Smooth Muscle

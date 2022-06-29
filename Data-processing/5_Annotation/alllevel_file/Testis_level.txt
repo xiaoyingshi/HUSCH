@@ -1,0 +1,20 @@
+manual	level1	level2
+Apical/Narrow	Tissue-specific	Apical/Narrow
+Basal	Tissue-specific	Basal
+Clear	Tissue-specific	Clear
+Efferent Duct	Tissue-specific	Efferent Duct
+Endothelial	Stromal	Endothelial
+Germ	Tissue-specific	Germ
+Leydig	Tissue-specific	Leydig
+Macrophage	Immune	Macrophage
+Myoid	Muscle	Myoid
+PTM	Muscle	Myoid
+Principal	Tissue-specific	Principal
+Sertoli	Tissue-specific	Sertoli
+Sperm	Tissue-specific	Sperm
+Spermatid	Tissue-specific	Spermatid
+Spermatocyte	Tissue-specific	Spermatocyte
+Spermatogonia	Tissue-specific	Spermatogonia
+SSC	Tissue-specific	SSC
+Stromal	Stromal	Stromal
+Vascular Smooth Muscle	Muscle	Vascular Smooth Muscle

@@ -1,0 +1,17 @@
+manual	level1	level2
+B	Immune	B
+CD4Tconv	Immune	CD4Tconv
+CD8T	Immune	CD8T
+DC	Immune	DC
+Endothelial	Stromal	Endothelial
+Eosinophils	Immune	Eosinophils
+Mast	Immune	Mast
+Mono/Macro	Immune	Mono/Macro
+Myofibroblasts	Stromal	Myofibroblasts
+Neutrophils	Immune	Neutrophils
+NK	Immune	NK
+pDC	Immune	pDC
+Plasma	Immune	Plasma
+TMKI67	Immune	TMKI67
+Treg	Immune	Treg
+Fibroblasts	Stromal	Fibroblasts

@@ -1,0 +1,20 @@
+manual	level1	level2
+Acinar	Tissue-specific	Exocrine
+Alpha	Tissue-specific	Endocrine
+APC	Immune	APC
+Beta	Tissue-specific	Endocrine
+Delta	Tissue-specific	Endocrine
+Duct	Tissue-specific	Epithelial
+Endocrine	Tissue-specific	Endocrine
+Endothelial	Stromal	Endothelial
+Epsilon	Tissue-specific	Endocrine
+Exocrine	Tissue-specific	Exocrine
+Fibroblast	Stromal	Fibroblast
+Macrophage	Immune	Macrophage
+Mast	Immune	Mast
+Mesenchymal	Tissue-specific	Mesenchymal
+Muscle	Muscle	Muscle
+Pancreatic Polypeptide	Tissue-specific	Endocrine
+Pancreatic Stellate	Stromal	Pancreatic Stellate
+Schwann	Tissue-specific	Schwann
+T	Immune	T

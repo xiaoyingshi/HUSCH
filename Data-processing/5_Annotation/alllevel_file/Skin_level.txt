@@ -1,0 +1,24 @@
+manual	level1	level2	level3
+Bulge	Tissue-specific	Bulge	Bulge
+Endothelial	Stromal	Endothelial	Endothelial
+Epidermal Stem	Tissue-specific	Epidermal Stem	Epidermal Stem
+Fibroblast	Stromal	Fibroblast	Fibroblast
+IFE Basal	Tissue-specific	IFE Basal	IFE Basal
+IFE Granular	Tissue-specific	IFE Granular	IFE Granular
+IFE Mitotic	Tissue-specific	IFE Mitotic	IFE Mitotic
+IFE Spinous	Tissue-specific	IFE Spinous	IFE Spinous
+Infundibulum	Tissue-specific	Infundibulum	Infundibulum
+IRS/cuticle	Tissue-specific	IRS/cuticle	IRS/cuticle
+Isthmus	Tissue-specific	Isthmus	Isthmus
+Keratinocyte	Tissue-specific	Keratinocyte	Keratinocyte
+Langerhans	Immune	Langerhans	Langerhans
+Lymphatic Endothelial	Stromal	Endothelial	Lymphatic Endothelial
+Macrophages/DC	Immune	Macrophages/DC	Macrophages/DC
+Matrix/cortex/medulla	Tissue-specific	Matrix/cortex/medulla	Matrix/cortex/medulla
+Melanocyte	Tissue-specific	Melanocyte	Melanocyte
+Mesenchymal	Tissue-specific	Mesenchymal	Mesenchymal
+ORS B	Stromal	ORS B	ORS B
+Pericyte	Stromal	Pericyte	Pericyte
+Sebaceous/apocrine	Tissue-specific	Sebaceous/apocrine	Sebaceous/apocrine
+T	Immune	T	T
+Vascular Endothelial	Stromal	Endothelial	Vascular Endothelial

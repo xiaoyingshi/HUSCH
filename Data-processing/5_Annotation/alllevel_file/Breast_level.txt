@@ -1,0 +1,3 @@
+manual	level1
+Basal	Others
+Luminal	Tissue-specific
