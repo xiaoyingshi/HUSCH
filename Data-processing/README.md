@@ -2,8 +2,7 @@ HUSCH data processing pipeline
 ================
 ### Workflow
 
-![Workflow](https://raw.githubusercontent.com/SELINA-team/SELINA-reference_construction/master/docs/workflow.png)
-
+![Workflow](https://raw.githubusercontent.com/xiaoyingshi/HUSCH/master/Data-processing/docs/workflow.png)
 ### Download data
 
 1.  Download datasets from databases. Using python crawler for GEO, and
