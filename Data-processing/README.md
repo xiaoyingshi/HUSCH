@@ -1,4 +1,4 @@
-Reference update pipeline
+HUSCH data processing pipeline
 ================
 ### Workflow
 
